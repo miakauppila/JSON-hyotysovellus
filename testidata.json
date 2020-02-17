@@ -1,0 +1,24 @@
+{
+   "perhe":[
+      {  "etunimi":"Matti",
+         "sukunimi":"Meikäläinen",
+         "lähiosoite":"Meikniemi 3",
+         "postinro":"01234",
+         "postitoimipaikka":"Meikälä"
+      },
+      {  "etunimi":"Maija",
+         "sukunimi":"Meikäläinen",
+         "lähiosoite":"Meikniemi 3",
+         "postinro":"01234",
+         "postitoimipaikka":"Meikälä"
+      },
+      {  "etunimi":"Piltti",
+         "sukunimi":"Meikäläinen",
+         "lähiosoite":"Käkinokka 39",
+         "postinro":"00100",
+         "postitoimipaikka":"Helsinki"
+      }
+
+   ]
+
+}
