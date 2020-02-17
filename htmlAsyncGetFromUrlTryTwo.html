@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+	  <meta charset="UTF-8">
+	  <title>JavaScript - read JSON from URL</title>
+  </head>
+  <body>
+    <button visibility="visible"onclick="showOriginal()">Originaaliin</button>
+    <button visibility="visible"onclick="changeToStatusOne()">Näkymään #1</button>
+    <button visibility="hidden" onclick="changeToStatusTwo(myUrl)">Näkymään #2</button>
+    <button visibility="visible"onclick="changeToStatusThree(myUrl)">Näkymään #3</button>
+
+    <p id="teksti"></p>
+
+<script>
+window.onload = showOriginal ;							           // perusnäyttö
+const myUrl = "https://api.myjson.com/bins/12ygbs" ;    // mistä JSON noudetaan
+var jsonObj = {still:"empty"};
+
+// Asynkroninen ratkaisu mahdollistaa muun suorituksen jatkumisen (jos haku kestää)
+// Tästä eteenpäin nappuloiden funktiot
+function showOriginal() {
+  let tekstii = "Originaali";
+  document.getElementById("teksti").innerHTML = tekstii ;
+}
+
+function changeToStatusOne() {
+  	let tekstii = "Näkymän #1 sisältö on tässä<br><br>";
+  	document.getElementById("teksti").innerHTML = tekstii ;
+}
+
+function changeToStatusTwo(myUrl) {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      let tekstii = "Näkymän #2 sisältö on JSON-muotoinen<br><br>" + xhr.responseText;
+      document.getElementById("teksti").innerHTML = tekstii;
+    }
+  } ;
+  xhr.open("GET", myUrl, true) ;  // true = async, false = sync
+  xhr.send();
+}
+
+function changeToStatusThree(myUrl) {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+          let jsonObj = JSON.parse(xhr.responseText);  // muutetaan JSON string -> JSON objekti
+          let indeksi=2; //henkilön valinta asetettu tässä manuaalisesti 
+          let tekstii="Näkymän #3 sisältö<br><br>" + 
+            jsonObj.perhe[indeksi].etunimi+" "+jsonObj.perhe[indeksi].sukunimi + "<br>" +
+            jsonObj.perhe[indeksi].lähiosoite + "<br>" + 
+            jsonObj.perhe[indeksi].postinro+" "+jsonObj.perhe[indeksi].postitoimipaikka + "<br>";
+          document.getElementById("teksti").innerHTML = tekstii;
+    }
+  } ;
+  xhr.open("GET", myUrl, true) ;
+  xhr.send();
+}
+
+</script>
+
+  </body>
+</html>
