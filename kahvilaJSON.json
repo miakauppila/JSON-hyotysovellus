@@ -1,0 +1,65 @@
+{
+
+    "menun kieli": "suomi",
+
+    "kahvit": [{
+            "nimi": "cappucino",
+            "hinta": 3.50,
+            "kalorit": 250,
+            "kuvaus": "Kahvilamme suosituin juoma.",
+            "laktoositon": false
+        },
+
+        {
+            "nimi": "espresso",
+            "hinta": 2.50,
+            "kalorit": 50,
+            "laktoositon": true
+        },
+
+        {
+            "nimi": "Java tummapaahto",
+            "hinta": 6.0,
+            "kalorit": 40,
+            "kuvaus": "Java-pavuista valmistettu kahvi.",
+            "laktoositon": true
+        }
+    ],
+
+    "suolaiset": [{
+        "nimi": "bacon and eggs",
+        "hinta": 8.90,
+        "kalorit": 300,
+        "kuvaus": "Kokkimme valmistama aamiainen.",
+        "laktoositon": false,
+        "gluteeniton": true
+    }, {
+        "nimi": "croissant",
+        "hinta": 3.0,
+        "kalorit": 120,
+        "laktoositon": false
+    }],
+
+    "makeiset": [{
+        "nimi": "Mansikkakakku",
+        "hinta": 8.50,
+        "kalorit": 250,
+        "kuvaus": "Pala kakkua",
+        "laktoositon": false,
+        "gluteeniton": false
+    }, {
+        "nimi": "Suklaapala",
+        "hinta": 0.50,
+        "kalorit": 30,
+        "laktoositon": false,
+        "gluteeniton": true
+
+    }],
+
+    "yhteystiedot": {
+        "osoite": "Mannerheimintie 50",
+        "puhnro": "663 - 5283",
+        "aukioloaika": "8-14"
+    }
+
+}

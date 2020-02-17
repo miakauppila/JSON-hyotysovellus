@@ -1,0 +1,122 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Kahvila",
+    "description": "Kahvilan tiedot",
+	"type": "object",
+	"properties": {
+        "menun kieli": {
+            "type": "string"
+        },
+        "kahvit": {
+            "type": "array",
+			"items": {
+			"type": "object",
+			"properties": {
+        "nimi": {
+            "description": "Tuotteen uniikki nimi",
+            "type": "string"
+        },
+        "hinta": {
+            "type": "number",
+            "minimum": 0,
+            "exclusiveMinimum": false
+        },
+		 "kalorit": {
+            "type": "number",
+            "minimum": 0,
+            "exclusiveMinimum": false
+        },
+		 "kuvaus": {
+            "type": "string"
+        },
+		 "laktoositon": {
+            "type": "boolean"
+        }
+			},
+	"required": ["nimi", "hinta", "laktoositon"],
+	"additionalProperties": false
+	}			
+        },
+		 "suolaiset": {
+            "type": "array",
+			"items": {
+			"type": "object",
+			"properties": {
+        "nimi": {
+            "description": "Tuotteen uniikki nimi",
+            "type": "string"
+        },
+        "hinta": {
+            "type": "number",
+            "minimum": 0,
+            "exclusiveMinimum": false
+        },
+		 "kalorit": {
+            "type": "number",
+            "minimum": 0,
+            "exclusiveMinimum": true
+        },
+		 "kuvaus": {
+            "type": "string"
+        },
+		 "laktoositon": {
+            "type": "boolean"
+        },
+		"gluteeniton": {
+            "type": "boolean"
+        }
+			},
+	"required": ["nimi", "hinta", "laktoositon"]
+			}				
+        },
+		 "makeiset": {
+            "type": "array",
+			"items": {
+			"type": "object",
+			"properties": {
+        "nimi": {
+            "description": "Tuotteen uniikki nimi",
+            "type": "string"
+        },
+        "hinta": {
+            "type": "number",
+            "minimum": 0,
+            "exclusiveMinimum": false
+        },
+		 "kalorit": {
+            "type": "number",
+            "minimum": 0,
+            "exclusiveMinimum": true
+        },
+		 "kuvaus": {
+            "type": "string"
+        },
+		 "laktoositon": {
+            "type": "boolean"
+        },
+		"gluteeniton": {
+            "type": "boolean"
+        }
+			},
+	"required": ["nimi", "hinta", "laktoositon"]
+			}					
+        },
+		 "yhteystiedot": {
+            "type": "object",
+			"properties": {
+        "osoite": {
+            "type": "string"
+        },
+        "puhnro": {
+            "type": "string"
+        },
+		 "aukioloaika": {
+            "type": "string"
+        }
+    },
+	"required": ["osoite", "puhnro", "aukioloaika"]
+	}		
+			
+    },
+	"required": ["menun kieli", "kahvit", "suolaiset", "makeiset", "yhteystiedot"]
+}
